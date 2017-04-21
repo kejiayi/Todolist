@@ -24,7 +24,8 @@ class TodoHeader extends React.Component {
   render() {
     return (
       <div className="todo-header">
-        <input onKeyUp={this.handlerKeyUp} type="text" placeholder="请输入你的任务名称，按回车键确认" />
+        <h1>TODO</h1>
+        <input onKeyUp={this.handlerKeyUp} type="text" placeholder="请输入你的任务名称，按回车键确认" className="add" />
       </div>
     );
   }

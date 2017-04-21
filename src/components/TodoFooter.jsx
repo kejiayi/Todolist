@@ -29,7 +29,7 @@ class TodoFooter extends React.Component {
 TodoFooter.propTypes = {
   changTodoState: React.PropTypes.func.isRequired,
   clearDone: React.PropTypes.func.isRequired,
-  isAllChecked: React.PropTypes.bool.isRequired,
+  // isAllChecked: React.PropTypes.bool.isRequired,
   todoDoneCount: React.PropTypes.number.isRequired,
   todoCount: React.PropTypes.number.isRequired,
 };

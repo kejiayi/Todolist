@@ -35,11 +35,9 @@ class TodoItem extends React.Component {
   render() {
     const className = this.props.isDone ? 'task-done' : '';
     return (
-      <li>
-        <label htmlFor="secondName">
-          <input onKeyUp={this.handlerKeyUp} type="text" placeholder="改名称" />
-          <span className={className}>{this.props.text}</span>
-        </label>
+      <li className="todo-item">
+        <input onKeyUp={this.handlerKeyUp} type="text" placeholder="改名称" className="recompose" />
+        <span className={className}>{this.props.text}</span>
         <button ref={delButton => { this.TodoItem = delButton; }} className="btn btn-danger" onClick={this.handlerDelete}>删除</button>
       </li>
     );

@@ -125,7 +125,7 @@ module.exports = {
   */
   devServer: {
     // 配置监听端口, 因为8080很常用, 为了避免和其他程序冲突, 我们配个其他的端口号
-    port: 8080,
+    port: 8100,
 
     /*
     historyApiFallback用来配置页面的重定向

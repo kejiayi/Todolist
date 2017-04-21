@@ -1,2 +1,6 @@
-require('./styles/main.scss');  // 引入样式
-require('./components/App.jsx'); // 引入组件
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './components/App';
+
+ReactDOM.render(<App />, document.getElementById('app'));

@@ -1,8 +1,6 @@
 
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import LocalDb from 'localdb';
+// import LocalDb from 'localdb';
 import TodoHeader from './TodoHeader';
 import TodoFooter from './TodoFooter';
 import TodoMain from './TodoMain';
@@ -16,9 +14,8 @@ class App extends React.Component {
     this.clearDone = this.clearDone.bind(this);
     this.changTodoState = this.changTodoState.bind(this);
     this.changeTodoItemtText = this.changeTodoItemtText.bind(this);
-    this.data = new LocalDb('ReactDemo');
     this.state = {  // 定义组件状态
-      todos: this.data.get('todos') || [],
+      todos: [],
       isAllChecked: false,
     };
   }
@@ -38,7 +35,6 @@ class App extends React.Component {
   // 添加任务，传递给Header组件的方法
   addTodo(todoItem) {
     this.state.todos.push(todoItem); // todo列表
-    this.data.set('todos', this.state.todos);
     this.allChecked();
   }
 
@@ -46,7 +42,6 @@ class App extends React.Component {
   deleteTodo(index) {
     this.state.todos.splice(index, 1);
     this.setState({ todos: this.state.todos });
-    this.data.set('todos', this.state.todos);
   }
 
   // 清除已完成的任务
@@ -73,7 +68,6 @@ class App extends React.Component {
       this.state.todos[index].isDone = isDone;
       this.allChecked();
     }
-    this.data.set('todos', this.state.todos);
   }
 
   changeTodoItemtText(index, value) {
@@ -81,7 +75,6 @@ class App extends React.Component {
     this.setState({
       todos: this.state.todos,
     });
-    this.data.set('todos', this.state.todos);
   }
 
   // 组件渲染
@@ -106,6 +99,4 @@ class App extends React.Component {
     );
   }
 }
-export { App, TodoHeader, TodoMain, TodoFooter };
-
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
