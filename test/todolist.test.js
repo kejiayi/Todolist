@@ -62,7 +62,7 @@ describe('Dom Rendering', () => {
     changInput.value = 'new todo name';
     TestUtils.Simulate.keyUp(changInput, { key: 'Enter', keyCode: 13, which: 13 });
     const item = TestUtils.scryRenderedDOMComponentsWithTag(app, 'li')[0];
-    const changeValueNode = TestUtils.scryRenderedComponentsWithType(app, TodoItem)[0];
-    assert.isTrue(changeValueNode.props.text === 'new todo name');
+    const TodoItemComponent = TestUtils.scryRenderedComponentsWithType(app, TodoItem)[0];
+    assert.isTrue(TodoItemComponent.props.text === 'new todo name');
   });
 });
